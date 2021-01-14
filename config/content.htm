@@ -655,6 +655,31 @@
 <div class="imagewrap" style="text-align: center;"><span class="caption" lang=""></span></div>
 <div class="imagewrap" style="text-align: center;"><span class="caption" lang="">Liquid-cooled CPU. 水冷式CPU。</span></div>
 <div class="imagewrap" style="text-align: center;"><span class="caption" lang=""></span></div>
+<span class="caption" lang=""></span>
+<h1 class="imagewrap" style="text-align: left;"><span class="caption" lang="">HW2</span></h1>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># use "python read url file data" search"
+# get "https://stackoverflow.com/questions/1393324/given-a-url-to-a-text-file-what-is-the-simplest-way-to-read-the-contents-of-the"
+# since we use python 3 therefore try to use the following script to get cp1a list
+import urllib.request  # the lib that handles the url stuff
+target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0762"
+cp1a = []
+for line in urllib.request.urlopen(target_url):
+    cp1a.append(line.decode('utf-8'))
+    #print(line.decode('utf-8'), end = "") #utf-8 or iso8859-1 or whatever the page encoding scheme is
+print(cp1a)
+# need to chop \n for each line</pre>
+<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># use "python chop new line" search 
+# get "https://stackoverflow.com/questions/275018/how-can-i-remove-a-trailing-newline"
+# found .rstrip() maybe work
+import urllib.request  # the lib that handles the url stuff
+target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0762"
+cp1a = []
+for line in urllib.request.urlopen(target_url):
+    cp1a.append(line.decode('utf-8').rstrip())
+    #print(line.decode('utf-8'), end = "") #utf-8 or iso8859-1 or whatever the page encoding scheme is
+print(cp1a)
+# yes, we got the needed list.</pre>
 <h1 class="imagewrap" style="text-align: left;"><span class="caption" lang="">HW3</span></h1>
 <div class="imagewrap" style="text-align: center;"><span class="caption" lang=""></span></div>
 </div>

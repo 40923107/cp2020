@@ -655,11 +655,24 @@
 <div class="imagewrap" style="text-align: center;"><span class="caption" lang=""></span></div>
 <div class="imagewrap" style="text-align: center;"><span class="caption" lang="">Liquid-cooled CPU. 水冷式CPU。</span></div>
 <div class="imagewrap" style="text-align: center;"><span class="caption" lang=""></span></div>
-<h2 class="imagewrap" style="text-align: left;"><span class="caption" lang="">HW3</span></h2>
+<span class="caption" lang=""></span>
+<h1 class="imagewrap" style="text-align: left;"><span class="caption" lang="">HW2</span></h1>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># use "python read url file data" search"
+# get "https://stackoverflow.com/questions/1393324/given-a-url-to-a-text-file-what-is-the-simplest-way-to-read-the-contents-of-the"
+# since we use python 3 therefore try to use the following script to get cp1a list
+import urllib.request  # the lib that handles the url stuff
+target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0762"
+cp1a = []
+for line in urllib.request.urlopen(target_url):
+    cp1a.append(line.decode('utf-8'))
+    #print(line.decode('utf-8'), end = "") #utf-8 or iso8859-1 or whatever the page encoding scheme is
+print(cp1a)
+# need to chop \n for each line</pre>
+<h1 class="imagewrap" style="text-align: left;"><span class="caption" lang="">HW3</span></h1>
 <div class="imagewrap" style="text-align: center;"><span class="caption" lang=""></span></div>
 </div>
 <div class="contentContain">
-<h3 class="imagewrap" style="text-align: left;"><span class="caption" lang=""><span>10：List Overlap Comprehensions  </span>列表重疊理解</span></h3>
+<h2 class="imagewrap" style="text-align: left;"><span class="caption" lang=""><span>10：List Overlap Comprehensions  </span>列表重疊理解</span></h2>
 <p><strong><span class="caption" lang="">Exercise 10 (and Solution) 練習10（和解決方案）</span></strong></p>
 <p><strong><span class="caption" lang=""></span></strong></p>
 <p>This week’s exercise is going to be revisiting an old exercise (see<span> </span><a href="https://www.practicepython.org/exercise/2014/03/05/05-list-overlap.html">Exercise 5</a>), except require the solution in a different way.</p>
