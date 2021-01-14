@@ -820,3 +820,47 @@ print(cp1a)
 <p>These variables you pass to functions are called<span> </span><em>variables</em>,<span> </span><em>parameters</em>, or<span> </span><em>arguments</em>.</p>
 <p>現在，由於幫助文本不同，因此使用戶更容易使用該程序。</p>
 <p>傳遞給函數的這些變量稱為變量，參數或參數。</p>
+<p></p>
+<p><strong>Default arguments 默認參數</strong></p>
+<p></p>
+<p>In the example above, once I have added an argument to my function, I always have to give an argument when I call the function. I can’t forget to give the get_integer() function from above a string to print to the screen. In some cases, I want there to be a “default” behavior for my function that happens when I create an argument for it but don’t give it any.</p>
+<p>在上面的示例中，在向函數添加參數後，在調用函數時始終必須提供參數。 我不能忘記從字符串上方給get_integer（）函數打印到屏幕上。 在某些情況下，我希望函數有一個“默認”行為，這種行為會在我為其創建參數但不提供任何參數時發生。</p>
+<p><span>In the example above, if I don’t give a custom string (which may be 95% of the time I use this function), I just want the </span><code class="highlighter-rouge">input()</code><span><span> </span>line to say<span> </span></span><code class="highlighter-rouge">"Give me a number: "</code><span><span> </span>and I want to save myself the trouble of writing this every single time I call the function. So what I can do is give my function<span> </span></span><em>default arguments</em><span>. Like so:</span></p>
+<p><span>在上面的示例中，如果我不提供自定義字符串（使用該函數的時間可能是95％），我只想讓input（）行說“給我一個數字：”，而我想 節省了我每次調用該函數時編寫此代碼的麻煩。 所以我能做的就是給我的函數提供默認參數。 像這樣：</span></p>
+<p><span></span></p>
+<pre><code class="language-python" data-lang="python">  <span class="k">def</span> <span class="nf">get_integer</span><span class="p">(</span><span class="n">help_text</span><span class="o">=</span><span class="s">"Give me a number: "</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="n">help_text</span><span class="p">))<br/><br/></span></code></pre>
+<p>What happens now is I can use the function in two ways: by giving it an argument and by NOT giving it an argument.</p>
+<p>現在發生的事情是我可以通過兩種方式使用該函數：通過給它一個參數和不給它一個參數。</p>
+<p></p>
+<p><code class="language-python" data-lang="python"> <span class="k">def</span> <span class="nf">get_integer</span><span class="p">(</span><span class="n">help_text</span><span class="o">=</span><span class="s">"Give me a number: "</span><span class="p">):</span> <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="n">help_text</span><span class="p">))</span> <span class="n">age</span> <span class="o">=</span> <span class="n">get_integer</span><span class="p">(</span><span class="s">"Tell me your age: "</span><span class="p">)</span> <span class="n">school_year</span> <span class="o">=</span> <span class="n">get_integer</span><span class="p">()</span> <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">15</span><span class="p">:</span> <span class="k">print</span><span class="p">(</span><span class="s">"You are over the age of 15"</span><span class="p">)</span> <span class="k">print</span><span class="p">(</span><span class="s">"You are in grade "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">school_year</span><span class="p">))<br/><br/><span>The first time I call the function, it will print </span><code class="highlighter-rouge">"Tell me your age: "</code><span>, but the second time, it will print<span> </span></span><code class="highlighter-rouge">"Give me a number: "</code><span>, because I did not give it a string and it will execute the default behavior.</span></span></code></p>
+<p><code class="language-python" data-lang="python"><span class="p"><span>第一次調用該函數時，它將打印“告訴我您的年齡：”，但是第二次它將顯示“給我一個數字：”，因為我沒有給它提供字符串，它將執行默認行為 。</span></span></code></p>
+<p><code class="language-python" data-lang="python"><span class="p"><span></span></span></code></p>
+<div id="recap"><strong>Recap 回顧</strong></div>
+<div><strong></strong></div>
+<p>What a function does is wrap a piece of code that we want to reuse, labels it, and allows us to use it again relatively easily. You can add variables to the functions to make your code even MORE reusable, and you can add default arguments to these variables.</p>
+<p>Functions are a bit strange to deal with at first, but once you master them, they will be your savior in programming. Besides, the whole point of learning programming is abstraction, problem solving, breaking down problems, and that’s exactly what functions are all about.</p>
+<p>函數的作用是包裝我們要重用的一段代碼，對其進行標記，並允許我們相對容易地再次使用它。 您可以將變量添加到函數中，以使代碼更加可重用，並且可以將默認參數添加到這些變量中。</p>
+<p>一開始處理函數有點奇怪，但是一旦掌握了這些函數，它們就會成為您編程中的救星。 此外，學習編程的重點是抽象，解決問題，解決問題，而這正是功能的全部內容。</p>
+<p></p>
+<p>Happy coding! 祝您編碼愉快！</p>
+<p></p>
+<h2><span>List Ends 清單結尾</span></h2>
+<p><span></span></p>
+<p><strong>Exercise 12 (and Solution) 練習12（和解決方案）</strong></p>
+<p><strong></strong></p>
+<p>Write a program that takes a list of numbers (for example, a = [5, 10, 15, 20, 25]) and makes a new list of only the first and last elements of the given list. For practice, write this code inside a function.</p>
+<p><strong>編寫一個程序，該程序接受一個數字列表（例如，a = [5、10、15、20、25]），並僅給出給定列表的第一個和最後一個元素組成一個新列表。 為了練習，請在函數內編寫此代碼。</strong></p>
+<p><strong></strong></p>
+<p><strong>Concepts to practice 練習概念</strong></p>
+<p><strong></strong></p>
+<p>• Lists and properties of lists</p>
+<p><span>   列表和列表屬性</span></p>
+<p>• List comprehensions (maybe)</p>
+<p>   <span>列表理解（也許）</span></p>
+<p>• Functions</p>
+<p>   <span>職能</span></p>
+<p></p>
+<p><span>Happy coding! 祝您編碼愉快！</span></p>
+<p><strong></strong></p>
+<p></p>
