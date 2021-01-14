@@ -657,7 +657,74 @@
 <div class="imagewrap" style="text-align: center;"><span class="caption" lang=""></span></div>
 <div class="imagewrap" style="text-align: center;"><span class="caption" lang=""></span></div>
 <div class="imagewrap" style="text-align: center;"><span class="caption" lang=""></span></div>
-<h2 class="imagewrap" style="text-align: left;"><span class="caption" lang=""><span>List Overlap Comprehensions  </span>列表重疊理解</span></h2>
+<h2 class="imagewrap" style="text-align: left;"><span class="caption" lang=""><span>10：List Overlap Comprehensions  </span>列表重疊理解</span></h2>
+<p><strong><span class="caption" lang="">Exercise 10 (and Solution) 練習10（和解決方案）</span></strong></p>
+<p><strong><span class="caption" lang=""></span></strong></p>
+<p>This week’s exercise is going to be revisiting an old exercise (see<span> </span><a href="https://www.practicepython.org/exercise/2014/03/05/05-list-overlap.html">Exercise 5</a>), except require the solution in a different way.</p>
+<p>本週的練習將重溫舊的練習（請參閱練習5），但需要以其他方式解決。</p>
+<p></p>
+<p>Take two lists, say for example these two:</p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">	<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">89</span><span class="p">]</span>
+	<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span></code></pre>
+</figure>
+<p>and write a program that returns a list that contains only the elements that are common between the lists (without duplicates). Make sure your program works on two lists of different sizes. Write this<span> </span><s>in one line of Python</s><span> </span><em>using at least one list comprehension</em>. (<em>Hint: Remember<span> </span><a href="https://www.practicepython.org/exercise/2014/03/19/07-list-comprehensions.html">list comprehensions</a><span> </span>from Exercise 7</em>).</p>
+<p>拿兩個列表，舉例來說，這兩個：</p>
+<p>a = [1、2、3、5、8、13、21、34、55、89]<br/>b = [1、2、3、4、5、6、7、8、9、10、11、12、13]<br/>並編寫一個程序，該程序返回一個列表，該列表僅包含列表之間的公共元素（無重複項）。 確保您的程序可以在兩個不同大小的列表上運行。 至少使用一個列表理解功能，用一行Python編寫此代碼。 （提示：請記住練習7中的列表理解）。</p>
+<p></p>
+<p>The original formulation of this exercise said to write the solution using one line of Python, but a few readers pointed out that this was impossible to do without using <code class="highlighter-rouge">set</code>s that I had not yet discussed on the blog, so you can either choose to use the original directive and read about the <a href="https://docs.python.org/3.3/library/stdtypes.html?highlight=set#set"><code class="highlighter-rouge">set</code> command in Python 3.3</a>, or try to implement this on your own and use at least one list comprehension in the solution.</p>
+<p>此練習的原始表述是使用一行Python編寫解決方案，但是一些讀者指出，如果不使用我在博客上尚未討論過的集，這是不可能做到的，因此您可以選擇使用 原始指令，並了解Python 3.3中的set命令，或者嘗試自己實現該指令並在解決方案中至少使用一個列表理解。</p>
+<p></p>
+<p><strong>Extra 額外 :</strong></p>
+<p>• Randomly generate two lists to test this</p>
+<p><span>   隨機生成兩個列表進行測試</span></p>
+<p></p>
+<p><strong>Discussion 討論區</strong></p>
+<p>Concepts for this week 本週的概念 :</p>
+<p><span>• </span>List comprehensions</p>
+<p>  清單理解</p>
+<p><span>• </span>Random numbers, continued</p>
+<p>  隨機數，續</p>
+<p></p>
+<p><strong>List comprehensions 清單理解</strong></p>
+<p><strong></strong></p>
+<p></p>
+<p><span>We already discussed list comprehensions in </span><a href="http://practicepython.blogspot.com/2014/03/exercise-7-list-comprehensions.html">Exercise 7</a><span>, but they can be made much more complicated.</span></p>
+<p><span>我們已經在練習7中討論了列表理解，但是可以使它們複雜得多。</span></p>
+<p><span></span></p>
+<p>For example:</p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">	<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+	<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+	<span class="n">allproducts</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="o">*</span><span class="n">b</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">y</span><span class="p">]<br/><br/></span></code></pre>
+</figure>
+<p>At the end of this piece of code,<span> </span><code class="highlighter-rouge">allproducts</code><span> </span>will contain the list<span> </span><code class="highlighter-rouge">[5, 10, 15, 10, 20, 30, 15, 30, 45]</code>. So you can put multiple for loops inside the comprehension. But you can also add more complicated conditionals</p>
+<p><span class="JLqJ4b ChMk0b" data-language-for-alternatives="zh-TW" data-language-to-translate-into="en" data-phrase-index="8" jsaction="agoMJf:PFBcW;usxOmf:aWLT7;jhKsnd:P7O7bd,F8DmGf;Q4AGo:Gm7gYd,qAKMYb;uFUCPb:pvnm0e,pfE8Hb,PFBcW;f56efd:dJXsye;EnoYf:KNzws,ZJsZZ,JgVSJc;zdMJQc:cCQNKb,ZJsZZ,zchEXc;Ytrrj:JJDvdc;tNR8yc:GeFvjb;oFN6Ye:hij5Wb" jscontroller="Zl5N8" jsdata="uqLsIf;_;$85" jsmodel="SsMkhd" jsname="txFAF"><span jsaction="click:qtZ4nf,GFf3ac,tMZCfe; contextmenu:Nqw7Te,QP7LD; mouseout:Nqw7Te; mouseover:qtZ4nf,c2aHje" jsname="W297wb">在這段代碼的最後，所有產品都將包含列表[5、10、15、10、20、30、15、30、45]。</span></span><span> </span><span class="JLqJ4b ChMk0b" data-language-for-alternatives="zh-TW" data-language-to-translate-into="en" data-phrase-index="9" jsaction="agoMJf:PFBcW;usxOmf:aWLT7;jhKsnd:P7O7bd,F8DmGf;Q4AGo:Gm7gYd,qAKMYb;uFUCPb:pvnm0e,pfE8Hb,PFBcW;f56efd:dJXsye;EnoYf:KNzws,ZJsZZ,JgVSJc;zdMJQc:cCQNKb,ZJsZZ,zchEXc;Ytrrj:JJDvdc;tNR8yc:GeFvjb;oFN6Ye:hij5Wb" jscontroller="Zl5N8" jsdata="uqLsIf;_;$86" jsmodel="SsMkhd" jsname="txFAF"><span jsaction="click:qtZ4nf,GFf3ac,tMZCfe; contextmenu:Nqw7Te,QP7LD; mouseout:Nqw7Te; mouseover:qtZ4nf,c2aHje" jsname="W297wb">因此，您可以在理解中放入多個for循環。</span></span><span> </span><span class="JLqJ4b ChMk0b" data-language-for-alternatives="zh-TW" data-language-to-translate-into="en" data-phrase-index="10" jsaction="agoMJf:PFBcW;usxOmf:aWLT7;jhKsnd:P7O7bd,F8DmGf;Q4AGo:Gm7gYd,qAKMYb;uFUCPb:pvnm0e,pfE8Hb,PFBcW;f56efd:dJXsye;EnoYf:KNzws,ZJsZZ,JgVSJc;zdMJQc:cCQNKb,ZJsZZ,zchEXc;Ytrrj:JJDvdc;tNR8yc:GeFvjb;oFN6Ye:hij5Wb" jscontroller="Zl5N8" jsdata="uqLsIf;_;$87" jsmodel="SsMkhd" jsname="txFAF"><span jsaction="click:qtZ4nf,GFf3ac,tMZCfe; contextmenu:Nqw7Te,QP7LD; mouseout:Nqw7Te; mouseover:qtZ4nf,c2aHje" jsname="W297wb">但是您還可以添加更複雜的條件：</span></span>:</p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">	<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+	<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>
+	<span class="n">customlist</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="o">*</span><span class="n">b</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">y</span> <span class="k">if</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">%</span><span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]<br/><br/></span></code></pre>
+</figure>
+<p>Now<span> </span><code class="highlighter-rouge">customlist</code><span> </span>contains<span> </span><code class="highlighter-rouge">[5, 15, 15, 45]</code><span> </span>because only the odd products are added to the list.</p>
+<p><span>現在，customlist包含[5、15、15、45]，因為只有奇數產品被添加到列表中。</span></p>
+<p><span></span></p>
+<p>In general, the list comprehension takes the form:</p>
+<p><span>通常，列表理解採用以下形式：</span></p>
+<p><span class="p">[</span><span class="n">EXPRESSION</span> <span class="n">FOR_LOOPS</span> <span class="n">CONDITIONALS</span><span class="p">]</span></p>
+<p>[EXPRESSION FOR_LOOPS條件]</p>
+<p>as shown in the examples above.</p>
+<p><span>如以上示例所示。</span></p>
+<p><br/><span></span></p>
+<p><strong>Random numbers, continued 隨機數，續</strong></p>
+<p></p>
+<p>Try to use the<span> </span><a href="https://docs.python.org/3.0/library/random.html">Python random documentation</a><span> </span>to figure out how to generate a random list. As a hint look below:</p>
+<figure class="highlight">
+<pre><code class="language-python" data-lang="python">	<span class="n">a</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span></code></pre>
+</figure>
+<p>This line of code will leave<span> </span><code class="highlighter-rouge">a</code><span> </span>containing a list of 5 random numbers from 0 to 99.</p>
+<p><span class="JLqJ4b ChMk0b" data-language-for-alternatives="zh-TW" data-language-to-translate-into="en" data-phrase-index="2" jsaction="agoMJf:PFBcW;usxOmf:aWLT7;jhKsnd:P7O7bd,F8DmGf;Q4AGo:Gm7gYd,qAKMYb;uFUCPb:pvnm0e,pfE8Hb,PFBcW;f56efd:dJXsye;EnoYf:KNzws,ZJsZZ,JgVSJc;zdMJQc:cCQNKb,ZJsZZ,zchEXc;Ytrrj:JJDvdc;tNR8yc:GeFvjb;oFN6Ye:hij5Wb" jscontroller="Zl5N8" jsdata="uqLsIf;_;$157" jsmodel="SsMkhd" jsname="txFAF"><span jsaction="click:qtZ4nf,GFf3ac,tMZCfe; contextmenu:Nqw7Te,QP7LD; mouseout:Nqw7Te; mouseover:qtZ4nf,c2aHje" jsname="W297wb">嘗試使用Python隨機文檔來弄清楚如何生成隨機列表。</span></span><span> </span><span class="JLqJ4b ChMk0b" data-language-for-alternatives="zh-TW" data-language-to-translate-into="en" data-phrase-index="3" jsaction="agoMJf:PFBcW;usxOmf:aWLT7;jhKsnd:P7O7bd,F8DmGf;Q4AGo:Gm7gYd,qAKMYb;uFUCPb:pvnm0e,pfE8Hb,PFBcW;f56efd:dJXsye;EnoYf:KNzws,ZJsZZ,JgVSJc;zdMJQc:cCQNKb,ZJsZZ,zchEXc;Ytrrj:JJDvdc;tNR8yc:GeFvjb;oFN6Ye:hij5Wb" jscontroller="Zl5N8" jsdata="uqLsIf;_;$158" jsmodel="SsMkhd" jsname="txFAF"><span jsaction="click:qtZ4nf,GFf3ac,tMZCfe; contextmenu:Nqw7Te,QP7LD; mouseout:Nqw7Te; mouseover:qtZ4nf,c2aHje" jsname="W297wb">提示如下：</span></span><span class="JLqJ4b" data-language-for-alternatives="zh-TW" data-language-to-translate-into="en" data-phrase-index="4" jsaction="agoMJf:PFBcW;usxOmf:aWLT7;jhKsnd:P7O7bd,F8DmGf;Q4AGo:Gm7gYd,qAKMYb;uFUCPb:pvnm0e,pfE8Hb,PFBcW;f56efd:dJXsye;EnoYf:KNzws,ZJsZZ,JgVSJc;zdMJQc:cCQNKb,ZJsZZ,zchEXc;Ytrrj:JJDvdc;tNR8yc:GeFvjb;oFN6Ye:hij5Wb" jscontroller="Zl5N8" jsdata="uqLsIf;_;$159" jsmodel="SsMkhd" jsname="txFAF"><span jsaction="click:qtZ4nf,GFf3ac,tMZCfe; contextmenu:Nqw7Te,QP7LD; mouseout:Nqw7Te; mouseover:qtZ4nf,c2aHje" jsname="W297wb"> </span></span><span class="JLqJ4b ChMk0b" data-language-for-alternatives="zh-TW" data-language-to-translate-into="en" data-phrase-index="5" jsaction="agoMJf:PFBcW;usxOmf:aWLT7;jhKsnd:P7O7bd,F8DmGf;Q4AGo:Gm7gYd,qAKMYb;uFUCPb:pvnm0e,pfE8Hb,PFBcW;f56efd:dJXsye;EnoYf:KNzws,ZJsZZ,JgVSJc;zdMJQc:cCQNKb,ZJsZZ,zchEXc;Ytrrj:JJDvdc;tNR8yc:GeFvjb;oFN6Ye:hij5Wb" jscontroller="Zl5N8" jsdata="uqLsIf;_;$160" jsmodel="SsMkhd" jsname="txFAF"><span jsaction="click:qtZ4nf,GFf3ac,tMZCfe; contextmenu:Nqw7Te,QP7LD; mouseout:Nqw7Te; mouseover:qtZ4nf,c2aHje" jsname="W297wb">一個= random.sample（range（100），5）</span></span><span class="JLqJ4b" data-language-for-alternatives="zh-TW" data-language-to-translate-into="en" data-phrase-index="6" jsaction="agoMJf:PFBcW;usxOmf:aWLT7;jhKsnd:P7O7bd,F8DmGf;Q4AGo:Gm7gYd,qAKMYb;uFUCPb:pvnm0e,pfE8Hb,PFBcW;f56efd:dJXsye;EnoYf:KNzws,ZJsZZ,JgVSJc;zdMJQc:cCQNKb,ZJsZZ,zchEXc;Ytrrj:JJDvdc;tNR8yc:GeFvjb;oFN6Ye:hij5Wb" jscontroller="Zl5N8" jsdata="uqLsIf;_;$161" jsmodel="SsMkhd" jsname="txFAF"><span jsaction="click:qtZ4nf,GFf3ac,tMZCfe; contextmenu:Nqw7Te,QP7LD; mouseout:Nqw7Te; mouseover:qtZ4nf,c2aHje" jsname="W297wb"> </span></span><span class="JLqJ4b ChMk0b" data-language-for-alternatives="zh-TW" data-language-to-translate-into="en" data-phrase-index="7" jsaction="agoMJf:PFBcW;usxOmf:aWLT7;jhKsnd:P7O7bd,F8DmGf;Q4AGo:Gm7gYd,qAKMYb;uFUCPb:pvnm0e,pfE8Hb,PFBcW;f56efd:dJXsye;EnoYf:KNzws,ZJsZZ,JgVSJc;zdMJQc:cCQNKb,ZJsZZ,zchEXc;Ytrrj:JJDvdc;tNR8yc:GeFvjb;oFN6Ye:hij5Wb" jscontroller="Zl5N8" jsdata="uqLsIf;_;$162" jsmodel="SsMkhd" jsname="txFAF"><span jsaction="click:qtZ4nf,GFf3ac,tMZCfe; contextmenu:Nqw7Te,QP7LD; mouseout:Nqw7Te; mouseover:qtZ4nf,c2aHje" jsname="W297wb">這行代碼將保留一個包含從0到99的5個隨機數的列表。</span></span></p>
+<p></p>
+<p><strong>Happy coding! 祝您編碼愉快！</strong></p>
 </div>
 </div>
 </div>
